@@ -10,6 +10,8 @@ This is the main component, is the one that has all the endpoints for the issuer
 
 ### IPFS API
 This is an API fot the IPFS component of the system. It controls the uploading and naming on IPNS.
+The service listens on the host and port specified by the environment variables
+`IPFS_API_HOST` and `IPFS_API_PORT` (defaults are `0.0.0.0` and `4243`).
 
 ### PostgreSQL
 This is the SQL solution for a database in the system

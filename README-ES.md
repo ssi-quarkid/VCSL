@@ -13,6 +13,8 @@ La API de VCSL es el componente principal, abarcando todos los puntos finales pa
 ### API de IPFS
 
 La API de IPFS gestiona las interacciones con el componente IPFS del sistema. Es responsable de manejar la carga de archivos y gestionar el nombramiento en IPNS.
+El servicio expone la dirección y el puerto definidos en las variables de entorno
+`IPFS_API_HOST` e `IPFS_API_PORT` (por defecto `0.0.0.0` y `4243`).
 
 ### PostgreSQL
 

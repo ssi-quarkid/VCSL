@@ -17,7 +17,7 @@ EXPOSE 5001
 EXPOSE 8080
 EXPOSE 4001
 
-CMD ["uvicorn", "main:app", "--port", "4243", "--host", "0.0.0.0", "--reload"]
+CMD ["sh", "-c", "uvicorn main:app --port ${IPFS_API_PORT:-4243} --host ${IPFS_API_HOST:-0.0.0.0} --reload"]
 
 
 

@@ -13,7 +13,15 @@ from redis import Redis
 def init_di() -> None:
     di['redis_host'] = environ.get('REDIS_HOST', '127.0.0.1')
     di['redis_port'] = environ.get('REDIS_PORT', 6379)
-    di[Redis] = Redis(host=di['redis_host'], port=di['redis_port'], db=0)
+    di['redis_user'] = environ.get('REDIS_USER')
+    di['redis_pass'] = environ.get('REDIS_PASS')
+    di[Redis] = Redis(
+        host=di['redis_host'],
+        port=di['redis_port'],
+        username=di['redis_user'],
+        password=di['redis_pass'],
+        db=0
+    )
 
     di['psql_host'] = environ.get('PSQL_HOST', '127.0.0.1')
     di['psql_port'] = environ.get('PSQL_PORT', 5432)
