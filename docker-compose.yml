@@ -15,6 +15,8 @@ services:
       - PSQL_DB=vcsl_db
       - REDIS_HOST=redis
       - REDIS_PORT=6379
+      - REDIS_USER=
+      - REDIS_PASS=
       - IPFS_API_URL=
       - WEB3_URL=
       - WEB3_PRIVATE_KEY=
@@ -23,6 +25,9 @@ services:
 
   ipfs_api:
     build: ./ipfs_api
+    environment:
+      - IPFS_API_HOST=0.0.0.0
+      - IPFS_API_PORT=4243
     ports:
       - "4243:4243"
     restart: always
